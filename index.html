@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="author" content="port19">
+  <meta name="generator" content="zola">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://demonkingswarn.is-a.dev/website-beta/favicon.ico">
+  <link rel="apple-touch-icon" href="https://demonkingswarn.is-a.dev/website-beta/apple-touch-icon.png">
+  <link rel="stylesheet" type="text/css" href="https://demonkingswarn.is-a.dev/website-beta/style.css" />
+  <link rel="preload" href="https://demonkingswarn.is-a.dev/website-beta/NotoColorEmojiSubfont.woff2" as="font" type="font/woff2">
+  
+<title>DemonKingSwarn's Webpage</title>
+<meta name="description" content="My Writings on Linux, Tech and Lifestyle">
+<script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+
+<body>
+  <section>
+      
+
+<header style="font-family:Fira Sans,sans; padding-bottom:1.25rem;">
+  <h1 style="font-size:2.5em; margin-bottom:0;"> DemonKingSwarn's Webpage </h1>
+</header>
+<span>
+</span>
+<hr>
+
+
+<div x-cloak>
+  <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('filter', {
+            filter: '',
+
+            check(el) {
+                return this.filter === '' || el.textContent.includes(this.filter)
+            }
+        })
+    })
+</script>
+<h2> Filter Categories </h2>
+<span x-data>
+<button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = ''">reset</button>
+<button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '📚'">📚 lifestyle</button>
+<button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '💻'">💻 tech</button>
+<button style="margin-left:1rem; margin-right:1rem;" x-on:click="$store.filter.filter = '🍚'">🍚 recipes</button>
+</span>
+</div>
+
+<hr>
+
+  </section>
+  <footer>
+  </footer>
+</body>
+
+</html>

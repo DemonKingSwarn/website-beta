@@ -1,0 +1,7 @@
+User-agent: GPTBot
+Disallow: /
+
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://demonkingswarn.is-a.dev/website-beta/sitemap.xml
