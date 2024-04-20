@@ -35,25 +35,5 @@
 </span>
 </div>
 
-<h2> Recent Posts </h2>
-<ul x-data>
-{% set feed = lifestyle.pages | concat(with=tech.pages) | concat(with=recipes.pages) %}
-{% for post in feed | sort(attribute="date") | reverse | slice(end=15) %}
-  <li x-show="$store.filter.check($el)">
-    <time>{{ post.date | date(format="%d.%m.%Y") }}</time>  &ndash;
-    <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
-
-<details> <summary><i>see all</i></summary> <ul x-data>
-{% for post in feed | sort(attribute="date") | reverse | slice(start=15) %}
-  <li x-show="$store.filter.check($el)">
-    <time>{{ post.date | date(format="%d.%m.%Y") }}</time>  &ndash;
-    <a href="{{ post.permalink | safe }}">{{ post.title }} </a>
-  </li>
-{% endfor %}
-</ul> </details>
-
 <hr>
 {% endblock content %}
