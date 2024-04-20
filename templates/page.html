@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block meta %}
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+{% endblock meta %}
+
+{% block content %}
+<h1 class="title">
+  {{ page.title }}
+</h1>
+{% if page.updated %}
+<i>Last Updated: {{ page.updated }}</i><br>
+{% else %}
+<i>First Published: {{ page.date }}</i>
+{% endif %}
+<hr>
+{{ page.content | safe }}
+<hr>
+{% if page.lower or page.higher %}
+  <div class="post-nav" style="width:100%">
+    {% if page.lower %}
+      <a style="float:right" href="{{ page.lower.permalink }}">{{ page.lower.title }} ›</a>
+    {% endif %}
+      <a class="float:middle" href="https://port19.xyz">⌂</a>
+    {% if page.higher %}
+      <a style="float:left" href="{{ page.higher.permalink }}">‹ {{ page.higher.title }}</a>
+    {% endif %}
+  </div>
+  <br>
+{% endif %}
+<hr>
+{% endblock content %}
